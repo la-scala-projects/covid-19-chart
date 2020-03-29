@@ -1,0 +1,40 @@
+.page-footer {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 30px 0;
+}
+
+.page-footer__content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-footer__description {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.page-footer__social {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-footer__social-link {
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &--linkedin {
+    background-image: url("../img/linkedin.svg");
+    margin-right: 10px;
+  }
+
+  &--github {
+    background-image: url("../img/github.svg");
+  }
+}
