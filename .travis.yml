@@ -1,0 +1,22 @@
+anguage: node_js
+
+node_js:
+  - "8.16"
+
+notifications:
+  email: false
+
+cache:
+  directories:
+    - node_modules
+
+script: npm run build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github-token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master
+  edge: true
