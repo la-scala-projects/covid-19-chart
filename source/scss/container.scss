@@ -1,0 +1,23 @@
+.container {
+  max-width: $sm;
+  padding: 0 10px;
+  margin: 0 auto;
+
+  @media (min-width: $md) {
+    max-width: $md;
+    padding: 0 20px;
+  }
+
+  @media (min-width: $lg) {
+    max-width: $lg;
+    padding: 0 30px;
+  }
+
+  @media (min-width: $xl) {
+    max-width: $lg;
+  }
+}
+
+.container__chart {
+  width: 100%;
+}

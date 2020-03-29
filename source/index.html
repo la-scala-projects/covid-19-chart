@@ -3,20 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/vendors/normalize-css/normalize.css" />
     <link rel="stylesheet" href="/vendors/chart-js/chart.min.css" />
     <link rel="stylesheet" href="/css/style.min.css" />
     <title>COVID-19 Chart</title>
   </head>
   <body>
-    <h1>COVID-19 Chart</h1>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quam
-      aspernatur, ex ad accusantium labore sit, pariatur culpa minus libero
-      animi! Similique recusandae consectetur quis ea neque pariatur alias quas?
-    </p>
-
-    <canvas id="myChart" width="400" height="400"></canvas>
-
+    <div class="container">
+      <h1>COVID-19 Chart</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quam
+        aspernatur, ex ad accusantium labore sit, pariatur culpa minus libero
+        animi! Similique recusandae consectetur quis ea neque pariatur alias
+        quas?
+      </p>
+      <div class="container__chart">
+        <canvas id="myChart" width="100%" height="70%"></canvas>
+        <p>Last sync time: <span class="time">20:27, March 29, 2020</span>.</p>
+      </div>
+      <div class="footer">
+        <p>&copy; Kristina Kuzmenko, 2020.</p>
+        <a class="social" href="#">LinkedIn</a>
+        <a class="social" href="#">GitHub</a>
+        <a class="social" href="#">Facebook</a>
+      </div>
+    </div>
     <script src="vendors/chart-js/chart.min.js"></script>
     <script src="js/script.js"></script>
   </body>

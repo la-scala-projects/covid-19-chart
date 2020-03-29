@@ -1,40 +1,61 @@
-'use strict';
+"use strict";
 
-const ctx = document.querySelector('#myChart');
+const ctx = document.querySelector("#myChart");
+const dataLines = [
+  {
+    label: "Cases",
+    data: [12, 19, 30, 35, 40, 100],
+    fill: false,
+    backgroundColor: "rgba(255, 0, 0, 1)",
+    borderColor: "rgba(255, 0, 0, 0.5)"
+  },
+  {
+    label: "Deaths",
+    data: [1, 2, 3, 4, 10, 30],
+    fill: false,
+    backgroundColor: "rgba(0, 0, 0, 1)",
+    borderColor: "rgba(0, 0, 0, 0.5)"
+  },
+  {
+    label: "Hospital",
+    data: [3, 5, 7, 10, 20, 50],
+    fill: false,
+    backgroundColor: "rgba(51, 199, 255, 1)",
+    borderColor: "rgba(51, 199, 255, 0.5)"
+  },
+  {
+    label: "Recovered",
+    data: [0, 0, 0, 5, 10, 12],
+    fill: false,
+    backgroundColor: "rgba(34, 182, 47, 1)",
+    borderColor: "rgba(34, 182, 47, 0.5)"
+  }
+];
+
+const dataLabels = [
+  "March 24, 2020",
+  "March 25, 2020",
+  "March 26, 2020",
+  "March 27, 2020",
+  "March 28, 2020",
+  "March 29, 2020"
+];
 
 const myChart = new Chart(ctx, {
-  type: 'bar',
+  type: "line",
   data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-      }]
+    labels: dataLabels,
+    datasets: dataLines
   },
   options: {
-      scales: {
-          yAxes: [{
-              ticks: {
-                  beginAtZero: true
-              }
-          }]
-      }
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true
+          }
+        }
+      ]
+    }
   }
 });
