@@ -25,7 +25,9 @@
           action="#"
         >
           <div class="country-search__wrapper">
-            <label for="country">Choose your country:</label>
+            <label class="country-search__label" for="country"
+              >Type country name:</label
+            >
             <input
               class="country-search__input"
               type="text"
@@ -39,18 +41,44 @@
         </form>
       </div>
     </header>
-    <main>
+    <main class="page-main">
       <div class="container">
-        <h2>Netherlands</h2>
-        <div class="period-wrapper">
-          <button type="button">Week</button>
-          <button type="button">Month</button>
-          <button type="button">All time</button>
+        <h2 class="page-main__country-title">Netherlands</h2>
+        <div class="page-main__period-wrapper">
+          <button
+            class="page-main__period-button page-main__period-button--active"
+            type="button"
+          >
+            Week
+          </button>
+          <button class="page-main__period-button" type="button">Month</button>
+          <button class="page-main__period-button" type="button">
+            All time
+          </button>
         </div>
-        <canvas id="myChart" width="100%" height="50%"></canvas>
-        <button type="button">Previous</button>
-        <button type="button">Next</button>
-        <p>Last sync time: <span class="time">20:27, March 29, 2020</span>.</p>
+        <canvas
+          class="page-main__chart"
+          id="myChart"
+          width="600"
+          height="300"
+        ></canvas>
+        <div class="page-main__nav-button-wrapper">
+          <button
+            class="page-main__nav-button page-main__nav-button--prev"
+            type="button"
+          >
+            Previous
+          </button>
+          <button
+            class="page-main__nav-button page-main__nav-button--next"
+            type="button"
+          >
+            Next
+          </button>
+        </div>
+        <p class="page-main__sync-time">
+          Last sync time: <span class="time">20:27, March 29, 2020</span>.
+        </p>
       </div>
     </main>
     <footer class="page-footer">

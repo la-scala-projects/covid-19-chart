@@ -2,4 +2,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.country-search__label {
+  margin-right: 10px;
+}
+
+.country-search__input {
+  display: flex;
+  padding: 7px 10px 9px;
+  border: 1px solid $white;
+  background-color: $white;
+
+  &:hover {
+    border-color: rgba(black, 0.5);
+  }
+
+  &:focus {
+    border-color: $black;
+  }
+}
+
+.country-search__button {
+  display: flex;
+  padding: 7px 14px 9px;
+  margin-left: -1px;
+  background-color: $black;
+  border: 1px solid $black;
+  color: $white;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }

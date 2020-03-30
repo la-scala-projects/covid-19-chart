@@ -1,0 +1,72 @@
+.page-main {
+  padding: 30px 0;
+}
+
+.page-main__country-title {
+  text-align: center;
+  margin-top: 0;
+}
+
+.page-main__period-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.page-main__period-button {
+  margin-right: -1px;
+  padding: 7px 10px;
+  border: 1px solid $black;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover:not(&--active) {
+    opacity: 0.8;
+  }
+
+  &--active {
+    background-color: $black;
+    color: $white;
+    cursor: text;
+  }
+}
+
+.page-main__chart {
+  margin-bottom: 20px;
+}
+
+.page-main__nav-button-wrapper {
+  display: none;
+  justify-content: center;
+}
+
+.page-main__nav-button {
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--prev {
+    background-image: url("../img/left-arrow.svg");
+    margin-right: 30px;
+  }
+
+  &--next {
+    background-image: url("../img/right-arrow.svg");
+  }
+}
+
+.page-main__sync-time {
+  text-align: center;
+  font-size: 14px;
+}

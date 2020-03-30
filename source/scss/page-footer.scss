@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .page-footer__description {
@@ -28,6 +29,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   &--linkedin {
     background-image: url("../img/linkedin.svg");
