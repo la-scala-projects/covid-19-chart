@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/vendors/normalize-css/normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/vendors/chart-js/chart.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <title>COVID-19 Chart</title>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header__content-wrapper">
+          <h1 class="page-header__title">COVID-19 Chart</h1>
+        </div>
+        <form
+          class="country-search page-header__country-search"
+          method="GET"
+          id="country-search"
+          action="#"
+        >
+          <div class="country-search__wrapper">
+            <label class="country-search__label" for="country"
+              >Type country name:</label
+            >
+            <input
+              class="country-search__input"
+              type="text"
+              id="country"
+              placeholder="e.g. Netherlands"
+            />
+            <button class="country-search__button" type="submit">
+              Show data
+            </button>
+          </div>
+        </form>
+      </div>
+    </header>
+    <main class="page-main">
+      <div class="container">
+        <h2 class="page-main__country-title">Netherlands</h2>
+        <div class="page-main__period-wrapper">
+          <button
+            class="page-main__period-button page-main__period-button--active"
+            type="button"
+          >
+            Week
+          </button>
+          <button class="page-main__period-button" type="button">Month</button>
+          <button class="page-main__period-button" type="button">
+            All time
+          </button>
+        </div>
+        <canvas
+          class="page-main__chart"
+          id="myChart"
+          width="600"
+          height="300"
+        ></canvas>
+        <div class="page-main__nav-button-wrapper">
+          <button
+            class="page-main__nav-button page-main__nav-button--prev"
+            type="button"
+          >
+            Previous
+          </button>
+          <button
+            class="page-main__nav-button page-main__nav-button--next"
+            type="button"
+          >
+            Next
+          </button>
+        </div>
+        <p class="page-main__sync-time">
+          Last sync time: <span class="time">20:27, March 29, 2020</span>.
+        </p>
+      </div>
+    </main>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="page-footer__content-wrapper">
+          <div class="page-footer__content">
+            <p class="page-footer__description">
+              &copy; Designed and developed by Kristina Kuzmenko, 2020.
+            </p>
+            <p class="page-footer__description">
+              Based on data from CSSE at Johns Hopkins University (Baltimore,
+              MD).
+            </p>
+          </div>
+          <div class="page-footer__social">
+            <a
+              class="page-footer__social-link page-footer__social-link--linkedin"
+              href="https://www.linkedin.com/in/kristina-kuzmenko-7a80b760/"
+              target="blank"
+              >LinkedIn</a
+            >
+            <a
+              class="page-footer__social-link page-footer__social-link--github"
+              href="https://github.com/tinakuzmenko"
+              target="blank"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="vendors/chart-js/chart.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
