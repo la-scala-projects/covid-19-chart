@@ -2,28 +2,12 @@
   "name": "covid-19-chart",
   "version": "1.0.0",
   "description": "COVID-19 Chart",
-  "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "^1.x",
-    "autoprefixer": "^9.7.x",
-    "browser-sync": "^2.26.x",
-    "del": "^5.1.0",
-    "gulp": "^4.0.x",
-    "gulp-csso": "^4.0.1",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-plumber": "^1.2.x",
-    "gulp-postcss": "^8.0.x",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.x",
-    "gulp-sourcemaps": "^2.6.x",
-    "stylelint": "^13.1.x",
-    "stylelint-config-htmlacademy": "^0.1.x"
-  },
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax scss",
     "test": "npm run editorconfig && npm run stylelint",
-    "build": "gulp build",
-    "start": "gulp start"
+    "build": "webpack -p",
+    "start": "webpack-dev-server --open"
   },
   "editorconfig-cli": [
     "*.json",
@@ -35,5 +19,31 @@
   ],
   "engines": {
     "node": "^8.16"
+  },
+  "dependencies": {
+    "autoprefixer": "9.7.5",
+    "chart.js": "^2.9.3"
+  },
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "^1.x",
+    "babel-loader": "8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "5.1.1",
+    "css-loader": "3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "html-webpack-plugin": "^4.0.4",
+    "mini-css-extract-plugin": "0.9.0",
+    "node-sass": "^4.13.1",
+    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "postcss-loader": "3.0.0",
+    "sass-loader": "8.0.2",
+    "stylelint": "^13.1.x",
+    "stylelint-config-htmlacademy": "^0.1.x",
+    "terser-webpack-plugin": "2.3.5",
+    "webpack": "4.42.1",
+    "webpack-cli": "3.3.11",
+    "webpack-dev-server": "3.10.3"
   }
 }
