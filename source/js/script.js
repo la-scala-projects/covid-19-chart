@@ -1,4 +1,5 @@
 import { renderChart } from './render-chart';
+import { updateChart } from './update-chart';
 import { generateLoadUrl } from './helpers';
 import { updateCountry } from './update-country';
 import { load } from './load';
@@ -29,8 +30,7 @@ const dataLoadSuccessHandler = (data) => {
   if (!myChart) {
     myChart = renderChart(dataLabels, dataSets);
   } else {
-    console.log('Update chart');
-    // updateChart();
+    updateChart(myChart, dataSets);
   }
 };
 
