@@ -21,35 +21,35 @@ const processServerStatus = (xhr, onLoad, onError) => {
       } else {
         switch (xhr.status) {
           case Code.REQUEST_ERROR:
-            onError('Ошибка 400: Неверный запрос');
+            onError('Error 400: Bad Request');
             break;
           case Code.ACCESS_ERROR:
-            onError('Ошибка 403: Доступ запрещен');
+            onError('Error 403: Forbidden');
             break;
           case Code.NOT_FOUND_ERROR:
-            onError('Ошибка 404: Ничего не найдено');
+            onError('Error 404: Not Found');
             break;
           case Code.SERVER_ERROR:
-            onError('Ошибка 500: Ошибка сервера');
+            onError('Error 500: Internal Server Error');
             break;
           case Code.RESPONSE_ERROR:
-            onError('Ошибка 502: Неверный ответ сервера');
+            onError('Error 502: Bad Gateway');
             break;
           case Code.SERVICE_UNAVIALABLE:
-            onError('Ошибка 503: Сервер временно недоступен');
+            onError('Error 503: Service Unavailable');
             break;
           default:
-            onError(`Cтатус ответа: : ${xhr.status} ${xhr.statusText}`);
+            onError(`Request status: ${xhr.status} ${xhr.statusText}`);
         }
       }
     }
   });
 
   xhr.addEventListener('error', () => {
-    onError('Произошла ошибка соединения');
+    onError('Network error');
   });
   xhr.addEventListener('timeout', () => {
-    onError(`Запрос не выполнился за ${xhr.timeout}мс`);
+    onError(`Request exited with timeout ${xhr.timeout} ms`);
   });
 
   xhr.timeout = TIMEOUT_IN_MS;

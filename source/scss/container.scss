@@ -16,4 +16,8 @@
   @media (min-width: $xl) {
     max-width: $lg;
   }
+
+  &--hidden {
+    display: none;
+  }
 }
