@@ -1,25 +1,38 @@
-import Chart from 'chart.js';
-import './country-search-form';
-import { dataLines, dataLabels } from './data';
+import { renderChart } from './render-chart';
+import { generateLoadUrl } from './helpers';
+import { load } from './load';
+import { createDataLabels, createDataLines } from './data';
 
-const ctx = document.querySelector('#myChart');
+const formCountrySearch = document.querySelector('#country-search');
+const countrySearchInput = formCountrySearch.querySelector('.country-search__input');
+let myChart;
 
-// eslint-disable-next-line no-unused-vars
-const myChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: dataLabels,
-    datasets: dataLines,
-  },
-  options: {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-          },
-        },
-      ],
-    },
-  },
-});
+const dataLoadErrorHandler = () => {
+  console.log('Error loading data');
+};
+
+const dataLoadSuccessHandler = (data) => {
+  const {
+    confirmed, dates, deaths, recovered,
+  } = data;
+  const dataLabels = createDataLabels(dates);
+  const dataSets = createDataLines(confirmed, deaths, recovered);
+  console.log(myChart);
+  if (!myChart) {
+    myChart = renderChart(dataLabels, dataSets);
+  } else {
+    console.log('Update chart');
+    // updateChart();
+  }
+};
+
+const formCountrySearchSubmitHandler = (evt) => {
+  evt.preventDefault();
+  const inputContent = countrySearchInput.value;
+  const newLoadUrl = generateLoadUrl(inputContent);
+  load(dataLoadSuccessHandler, dataLoadErrorHandler, newLoadUrl);
+};
+
+formCountrySearch.onsubmit = formCountrySearchSubmitHandler;
+
+export { dataLoadSuccessHandler };

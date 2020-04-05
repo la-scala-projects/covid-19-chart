@@ -11,7 +11,7 @@ const Code = {
   SERVICE_UNAVIALABLE: 503,
 };
 
-const processServerStatus = (xhr, onLoad, onError, errorButtonText) => {
+const processServerStatus = (xhr, onLoad, onError) => {
   xhr.responseType = 'json';
 
   xhr.addEventListener('load', () => {
@@ -21,22 +21,22 @@ const processServerStatus = (xhr, onLoad, onError, errorButtonText) => {
       } else {
         switch (xhr.status) {
           case Code.REQUEST_ERROR:
-            onError('Ошибка 400: Неверный запрос', errorButtonText);
+            onError('Ошибка 400: Неверный запрос');
             break;
           case Code.ACCESS_ERROR:
-            onError('Ошибка 403: Доступ запрещен', errorButtonText);
+            onError('Ошибка 403: Доступ запрещен');
             break;
           case Code.NOT_FOUND_ERROR:
-            onError('Ошибка 404: Ничего не найдено', errorButtonText);
+            onError('Ошибка 404: Ничего не найдено');
             break;
           case Code.SERVER_ERROR:
-            onError('Ошибка 500: Ошибка сервера', errorButtonText);
+            onError('Ошибка 500: Ошибка сервера');
             break;
           case Code.RESPONSE_ERROR:
-            onError('Ошибка 502: Неверный ответ сервера', errorButtonText);
+            onError('Ошибка 502: Неверный ответ сервера');
             break;
           case Code.SERVICE_UNAVIALABLE:
-            onError('Ошибка 503: Сервер временно недоступен', errorButtonText);
+            onError('Ошибка 503: Сервер временно недоступен');
             break;
           default:
             onError(`Cтатус ответа: : ${xhr.status} ${xhr.statusText}`);
@@ -46,10 +46,10 @@ const processServerStatus = (xhr, onLoad, onError, errorButtonText) => {
   });
 
   xhr.addEventListener('error', () => {
-    onError('Произошла ошибка соединения', errorButtonText);
+    onError('Произошла ошибка соединения');
   });
   xhr.addEventListener('timeout', () => {
-    onError(`Запрос не выполнился за ${xhr.timeout}мс`, errorButtonText);
+    onError(`Запрос не выполнился за ${xhr.timeout}мс`);
   });
 
   xhr.timeout = TIMEOUT_IN_MS;
