@@ -1,7 +1,10 @@
+import moment from 'moment';
+
 import { renderChart } from './render-chart';
 import { updateChart } from './update-chart';
 import { generateLoadUrl } from './helpers';
 import { updateCountry } from './update-country';
+import { updateSyncTime } from './update-sync-time';
 import { load } from './load';
 import { createErrorMessage } from './show-error';
 import { createDataLabels, createDataLines } from './data';
@@ -41,6 +44,8 @@ const formCountrySearchSubmitHandler = (evt) => {
 
   load(dataLoadSuccessHandler, dataLoadErrorHandler, newLoadUrl);
   updateCountry(inputContent.toLowerCase());
+  const newSyncTime = moment().format('LLL');
+  updateSyncTime(newSyncTime);
 };
 
 formCountrySearch.onsubmit = formCountrySearchSubmitHandler;
