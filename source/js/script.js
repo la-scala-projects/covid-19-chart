@@ -29,6 +29,7 @@ const dataLoadSuccessHandler = (data) => {
 
   const dataLabels = createDataLabels(parsedDates);
   const dataSets = createDataLines(confirmed, deaths, recovered);
+  const newSyncTime = moment().format('LLL');
 
   if (container.classList.contains('container--hidden')) {
     container.classList.remove('container--hidden');
@@ -39,6 +40,9 @@ const dataLoadSuccessHandler = (data) => {
   } else {
     updateChart(myChart, dataSets);
   }
+
+  updateCountry(countrySearchInput.value.toLowerCase());
+  updateSyncTime(newSyncTime);
 };
 
 const formCountrySearchSubmitHandler = (evt) => {
@@ -48,11 +52,6 @@ const formCountrySearchSubmitHandler = (evt) => {
   const newLoadUrl = generateLoadUrl(inputContent);
 
   load(dataLoadSuccessHandler, dataLoadErrorHandler, newLoadUrl);
-  updateCountry(inputContent.toLowerCase());
-
-  const newSyncTime = moment().format('LLL');
-
-  updateSyncTime(newSyncTime);
 };
 
 formCountrySearch.onsubmit = formCountrySearchSubmitHandler;
