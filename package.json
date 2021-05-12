@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "autoprefixer": "9.7.5",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "moment": "2.24.0"
   },
   "devDependencies": {
