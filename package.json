@@ -23,7 +23,7 @@
   "dependencies": {
     "autoprefixer": "9.7.5",
     "chart.js": "^2.9.4",
-    "moment": "2.24.0"
+    "moment": "2.29.2"
   },
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "^1.x",
